@@ -1,0 +1,29 @@
+{
+  "name": "mongo-hw",
+  "version": "1.0.0",
+  "main": "movies.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "db": "^3.3.0",
+    "express": "^4.17.1",
+    "mongo": "^0.1.0",
+    "mongodb": "^3.6.3",
+    "node": "^15.3.0",
+    "require": "^2.4.20"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Edenlsw/Mongo-Project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Edenlsw/Mongo-Project/issues"
+  },
+  "homepage": "https://github.com/Edenlsw/Mongo-Project#readme",
+  "description": ""
+}
