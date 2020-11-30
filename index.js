@@ -2,6 +2,7 @@
 
 const express = require("express");
 const cors = require ('cors');
+const mongoose = require('mongoose')
 // const { MongoClient, ObjectId } = require("mongodb");
 
 
@@ -17,12 +18,24 @@ const app = express();
 app.use(express.json());
 
 
-const client = new MongoClient(process.env.ATLAS_URI, {useUnifiedTopology: true});
+mongoose.connect('mongodb://localhost:27017/movie', { 
+    useNewUrlParser: true ,
+    useUnifiedTopology: true })
+    .then(() => {
+    console.log('connected to mongo db');
+}, error => {
+    console.error(error, 'error')
+});
 
 
 // db path 
 
-const uri = 'mongodb://localhost:27017'; 
+// const uri = 'mongodb://localhost:27017/movies'; 
+const client = new MongoClient(process.env.ATLAS_URI, {useUnifiedTopology: true});
+// const mongo = mongoose.connect(uri);
+// const client = new MongoClient(uri);
+
+
 
 
 // try to connect to MOngodb
@@ -35,10 +48,10 @@ const uri = 'mongodb://localhost:27017';
 
 // Check DB Connection 
 
-if (!uri)
-    console.log("Error have not connected to Database");
-else
- console.log("You are now connected to the Database");
+// if (!uri)
+//     console.log("Error have not connected to Database");
+// else
+//  console.log("You are now connected to the Database");
 
 
 
